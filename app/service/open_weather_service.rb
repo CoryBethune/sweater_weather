@@ -1,6 +1,6 @@
 class OpenWeatherService
   def self.get_weather(lat, lon)
-    response = connection.get("/data/2.5/onecall?lat=#{lat}&lon=#{lon}")
+    response = connection.get("/data/2.5/onecall?lat=#{lat}&lon=#{lon}&units=imperial&exclude=minutely,alerts")
     parse_data(response)
   end
 
