@@ -1,7 +1,7 @@
 class BookSerializer
-  i = 0
 
   def self.initialize(data, location, quantity)
+    i = 1
     {
       data: {
         id: "null",
@@ -19,8 +19,8 @@ class BookSerializer
               title: book[:title],
               publisher: book[:publisher]
             }
-            i += 1
             break if i == quantity
+            i += 1
           end
         }
       }
