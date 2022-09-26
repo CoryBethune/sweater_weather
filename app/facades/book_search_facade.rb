@@ -1,6 +1,6 @@
 class BookSearchFacade
-  def self.get_books(subject, quantity)
+  def self.get_books(subject)
     data = BookSearchService.get_books(subject)
-    Book.new(data, quantity)
+    Book.new(data)
   end
 end

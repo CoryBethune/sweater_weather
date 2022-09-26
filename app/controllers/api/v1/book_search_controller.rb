@@ -1,7 +1,7 @@
 class BookSearchController < ApplicationController
 
   def show
-    results = BookSearchFacade.get_books(params[:location], params[:quantity])
-    Book.new(results)
+    results = BookSearchFacade.get_books(params[:location])
+    BookSerializer.new(results, params[:quantity])
   end
 end
