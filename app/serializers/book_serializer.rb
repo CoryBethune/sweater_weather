@@ -1,6 +1,6 @@
 class BookSerializer
 
-  def self.initialize(data, location, quantity)
+  def self.book_collection(data, location, quantity)
     i = 1
     {
       data: {
@@ -19,6 +19,7 @@ class BookSerializer
               title: book[:title],
               publisher: book[:publisher]
             }
+            binding.pry
             break if i == quantity
             i += 1
           end
