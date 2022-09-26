@@ -6,13 +6,13 @@ class MapQuestService
   end
 
   private
-    def connection
+    def self.connection
       Faraday.new(url: "http://www.mapquestapi.com") do |faraday|
         faraday.params["key"] = ENV['map_quest_api_key']
       end
     end
 
-    def parse_data(response)
+    def self.parse_data(response)
       JSON.parse(response.body, symbolize_names: true)
     end
 end
