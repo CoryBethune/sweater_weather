@@ -48,6 +48,8 @@ group :development, :test do
   gem 'orderly'
   gem "vcr"
   gem "webmock"
+  gem 'figaro'
+  gem 'faraday'
 end
 
 group :development do
