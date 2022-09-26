@@ -1,6 +1,7 @@
 class BookSearchService
   def self.get_books(subject)
     response = connection.get("/search.json?subject=#{subject}")
+    parse_data(response)
   end
 
   private
