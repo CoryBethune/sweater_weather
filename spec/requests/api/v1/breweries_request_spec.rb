@@ -5,7 +5,7 @@ RSpec.describe "Brewery Serializer" do
     headers = { 'CONTENT_TYPE' => 'application/json', "Accept" => 'application/json' }
     get '/api/v1/breweries', headers: headers, params: { location: "denver", quantity: 5 }
     data = JSON.parse(response.body, symbolize_names: true)
-    
+
     expect(response).to be_successful
     expect(response).to have_http_status(200)
 
@@ -36,5 +36,21 @@ RSpec.describe "Brewery Serializer" do
     expect(data[:data][:attributes][:breweries].first[:name]).to be_an(String)
     expect(data[:data][:attributes][:breweries].first).to have_key(:brewery_type)
     expect(data[:data][:attributes][:breweries].first[:brewery_type]).to be_an(String)
+
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:street)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:address_2)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:address_3)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:city)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:state)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:county_province)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:postal_code)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:country)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:longitude)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:latitude)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:phone)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:website_url)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:updated_at)
+    expect(data[:data][:attributes][:breweries].first).to_not have_key(:created_at)
+
   end
 end
