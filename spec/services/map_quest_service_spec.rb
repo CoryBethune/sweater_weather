@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Map Quest Service" do
   it 'gets the lat and long of a location' do
-    city = "denver,co"
+    city = "denver"
 
     data = MapQuestService.get_location(city)
 
