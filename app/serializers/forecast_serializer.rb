@@ -2,7 +2,7 @@ class ForecastSerializer
   def self.new_forecast(forecast)
     {
       data: {
-        id: null,
+        id: "null",
         type: "forecast",
         attributes: {
           current_weather: {
