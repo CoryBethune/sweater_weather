@@ -2,10 +2,8 @@ require "rails_helper"
 
 RSpec.describe "Map Quest Service" do
   it 'gets the lat and long of a location' do
-    city = "denver"
-
-    data = MapQuestService.get_location(city)
-
+    data = MapQuestService.get_location("denver")
+    binding.pry
     expect(data).to have_key(:results)
     expect(data[:results]).to be_an Array
     expect(data[:results][0]).to have_key(:locations)
