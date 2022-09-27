@@ -30,6 +30,7 @@ RSpec.describe "Brewery Serializer" do
     expect(data[:data][:attributes]).to have_key(:breweries)
     expect(data[:data][:attributes]).to be_an(Hash)
 
+    expect(data[:data][:attributes][:breweries].count).to eq(5)
     expect(data[:data][:attributes][:breweries].first).to have_key(:id)
     expect(data[:data][:attributes][:breweries].first[:id]).to be_an(String)
     expect(data[:data][:attributes][:breweries].first).to have_key(:name)
