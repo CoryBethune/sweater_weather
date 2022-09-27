@@ -5,7 +5,7 @@ RSpec.describe "Forecast Serializer" do
     headers = { 'CONTENT_TYPE' => 'application/json', "Accept" => 'application/json' }
     get '/api/v1/forecasts', headers: headers, params: { location: "denver,co" }
     data = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
+    
     expect(response).to be_successful
     expect(response).to have_http_status(200)
 
