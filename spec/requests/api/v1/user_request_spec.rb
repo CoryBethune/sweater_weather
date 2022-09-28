@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "User Creation" do
+RSpec.describe "User Requests" do
   it "Creates a user from a POST request" do
     params = ({
           "email": "test@example.com",
@@ -69,7 +69,7 @@ RSpec.describe "User Creation" do
 
     expect(response).to_not be_successful
     expect(response.status).to eq(401)
-    
+
     expect(data).to have_key(:errors)
     expect(data[:errors]).to be_an(String)
     expect(data[:errors]).to eq("Password and password confirmation fields must match.")
