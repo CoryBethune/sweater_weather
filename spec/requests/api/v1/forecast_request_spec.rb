@@ -37,7 +37,7 @@ RSpec.describe "Forecast Serializer" do
     expect(data[:data][:attributes][:current_weather]).to have_key(:humidity)
     expect(data[:data][:attributes][:current_weather][:humidity]).to be_an(Integer)
     expect(data[:data][:attributes][:current_weather]).to have_key(:uvi)
-    expect(data[:data][:attributes][:current_weather][:uvi]).to be_an(Integer)
+    expect(data[:data][:attributes][:current_weather][:uvi]).to be_an(Float)
     expect(data[:data][:attributes][:current_weather]).to have_key(:visibility)
     expect(data[:data][:attributes][:current_weather][:visibility]).to be_an(Integer)
     expect(data[:data][:attributes][:current_weather]).to have_key(:conditions)
