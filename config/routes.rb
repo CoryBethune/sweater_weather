@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     end
   end
 
+  post '/api/v1/users', to: 'api/v1/users#create'
+
 end
