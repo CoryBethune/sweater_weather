@@ -2,8 +2,13 @@ require "rails_helper"
 
 RSpec.describe "Forecast Serializer" do
   it "returns a properly formatted json response" do
+    params = ({
+      "location": "denver,co"
+    })
     headers = { 'CONTENT_TYPE' => 'application/json', "Accept" => 'application/json' }
-    get '/api/v1/forecasts', headers: headers, params: { location: "denver,co" }
+
+    get '/api/v1/forecasts', headers: headers, params: JSON.generate(params)
+
     data = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_successful
