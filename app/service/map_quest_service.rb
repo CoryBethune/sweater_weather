@@ -5,6 +5,11 @@ class MapQuestService
     parse_data(response)
   end
 
+  def self.get_road_trip(origin, destination)
+    response = connection.get("/directions/v2/route?from=#{origin}&to=#{destination}")
+    parse_data(response)
+  end
+
   private
     def self.connection
       Faraday.new(url: "http://www.mapquestapi.com") do |faraday|
