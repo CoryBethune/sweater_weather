@@ -1,8 +1,6 @@
 class RoadTripFacade
   def self.get_road_trip(origin, destination)
-    trip_data = MapQuestService.get_road_trip(origin, destination)
-    RoadTrip.get_road_trip(trip_data)
-
-    # weather = OpenWeatherFacade.get_weather(trip_data)
+    map_data = MapQuestService.get_road_trip(origin, destination)
+    RoadTrip.new_road_trip(map_data)
   end
 end
