@@ -8,9 +8,9 @@ class RoadTripSerializer
           start_city: origin,
           end_city: destination,
           travel_time: trip_data.time,
-          weather_at_eat: {
-            # temperature:
-            # conditions:
+          weather_at_eta: {
+            temperature: forecast.hourly[(trip_data.time.byteslice(0, 2).to_i)][:temp],
+            conditions: forecast.hourly[(trip_data.time.byteslice(0, 2).to_i)][:weather][0][:description]
           }
         }
       }
