@@ -11,13 +11,13 @@ RSpec.describe "Road Trip Serializer" do
     headers = {"CONTENT_TYPE" => "application/json"}
 
     post "/api/v1/road_trip", headers: headers, params: JSON.generate(params)
-    binding.pry
+    # binding.pry
     data = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_successful
     expect(response.status).to eq(201)
 
-    binding.pry
+    # binding.pry
 
 
 
